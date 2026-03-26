@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> School Map</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div class="brand-wrap">
+        <div>
+          <p class="kicker">THE WINCHESTER SCHOOL</p>
+          <h1>  School Map</h1>
+          <p class="subtitle">Mapped by floor: Ground (FS1/FS2/YR1), First (YR2/YR3/YR4 A-E), Second (YR4 F-J/YR5/YR6).</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="map-options" aria-label="Map layout options">
+      <button id="optionCurrent" class="option-btn active" type="button">Option 1: Current Campus View</button>
+      <button id="optionGmaps" class="option-btn" type="button">Option 2: GMaps Style View</button>
+    </section>
+
+    <section class="toolbar">
+      <label for="zoneFilter">Zone</label>
+      <select id="zoneFilter">
+        <option value="all">All Zones</option>
+      </select>
+
+      <label for="floorFilter">Floor</label>
+      <select id="floorFilter">
+        <option value="all">All Floors</option>
+      </select>
+
+      <label for="classSearch">Find My Class</label>
+      <input id="classSearch" type="text" placeholder="e.g. YR5-C or FS1-A" />
+      <button id="searchBtn" class="search-btn" type="button">Find</button>
+    </section>
+
+    <section class="layout">
+      <div id="mapViews">
+        <div id="mapBoard" class="map-board" aria-label="School map board"></div>
+        <div id="streetMap" class="street-map hidden" aria-label="Google Maps style school map"></div>
+      </div>
+
+      <aside id="detailsPanel" class="details-panel">
+        <h2>Location Details</h2>
+        <p class="hint">Click any block on the map to view details.</p>
+        <p class="hint" id="flowHint">Flow: use stairs to move floors, follow red emergency arrows to exits.</p>
+        <div id="detailsContent"></div>
+      </aside>
+    </section>
+  </main>
+
+  <script src="scriptmap.js"></script>
+</body>
+</html>
